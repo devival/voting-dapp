@@ -1,6 +1,7 @@
 node_modules
 .idea
 .env
+.bin
 
 #Hardhat files
 cache
