@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/VotingDapp.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> VotingDapp.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/26</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @title Voting Dapp
+ * @author github.com/devival
+ */
+&nbsp;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
+&nbsp;
+// Import statements
+// Uncomment this line to use console.log
+import "hardhat/console.sol";
+&nbsp;
+// Interfaces
+// Libraries
+&nbsp;
+// Contracts
+contract VotingDapp {
+    // State variables
+    uint256 public nextElectionId; // New state variable
+&nbsp;
+    // candidate can be registerred to multiple elections
+    mapping(uint256 =&gt; mapping(address =&gt; bool)) public candidateStatus; // electionID &gt; candidate &gt; regStatus
+    mapping(uint256 =&gt; mapping(address =&gt; bool)) public voter; // electionID &gt; voter &gt; if voted
+    mapping(uint256 =&gt; mapping(address =&gt; uint256)) public candidateVotes; // electionID &gt; candidate &gt; votes
+&nbsp;
+    mapping(uint256 =&gt; address) public electionInitiator;
+    mapping(uint256 =&gt; uint256) public registrationPeriod;
+    mapping(uint256 =&gt; uint256) public votingPeriod;
+    mapping(uint256 =&gt; uint256) public electionEndTime;
+    // Events
+    event ElectionStart(
+        uint256 nextElectionId,
+        address initiator,
+        uint256 registrationPeriod,
+        uint256 votingPeriod,
+        uint256 endingTime
+    );
+    event CadidateRegistered(uint256 electionId, address candidate);
+    event Voted(address voter, uint256 electionId, address candidate);
+&nbsp;
+    // Errors
+    // Modifiers
+    ///////////////
+    // Functions //
+    ///////////////
+    constructor() {}
+&nbsp;
+    // "start an election" function (anyone) @params: reg period, voting period, ending time
+    function electionStart(
+        uint256 registrationPeriod_,
+        uint256 votingPeriod_,
+        uint256 endingTime_
+    ) public returns (uint256) {
+        require(
+            registrationPeriod_ &gt; 20 &amp;&amp; votingPeriod_ &gt; 20,
+            "Registration and Voting periods have to be greater than 20 seconds"
+        );
+        require(
+            (registrationPeriod_ + votingPeriod_) &lt; endingTime_,
+            "Please follow the time conditions: (Registration period + Voting Period) &lt; Ending Time"
+        );
+&nbsp;
+        // election starts right away, all period are stored in seconds
+        nextElectionId++;
+        registrationPeriod[nextElectionId] = block.timestamp + registrationPeriod_; // current + reg time
+        votingPeriod[nextElectionId] = (block.timestamp + registrationPeriod_) + votingPeriod_; // current + reg time + voting time
+        electionEndTime[nextElectionId] = block.timestamp + endingTime_; // current + end time
+        electionInitiator[nextElectionId] = address(msg.sender);
+&nbsp;
+        // notify the election start
+        emit ElectionStart(
+            nextElectionId,
+            address(msg.sender),
+            block.timestamp + registrationPeriod_,
+            (block.timestamp + registrationPeriod_) + votingPeriod_,
+            block.timestamp + endingTime_
+        );
+        return nextElectionId;
+    }
+&nbsp;
+    // "cadidate registration" function
+    // @audit if initiator creates another election, previous candidates already have earlier votes
+    function candidateReg(uint256 electionId_) public {
+        address candidate_ = address(msg.sender);
+        // @audit-ok require registration period to be open
+        require(
+            registrationPeriod[electionId_] &gt; block.timestamp,
+            "No registration period open for the given initiator"
+        );
+        // check if candidate not registerred already
+        require(!candidateStatus[electionId_][candidate_], "Already registered");
+&nbsp;
+        candidateStatus[electionId_][candidate_] = true;
+&nbsp;
+        emit CadidateRegistered(electionId_, candidate_);
+    }
+&nbsp;
+    // "vote" function (anyone, once, during the voting period)
+    function vote(uint256 electionId_, address candidate_) public {
+        // @audit-ok check if the election is on voting period
+        // reg 0-21, voting 21-42, end 45
+        require(
+            registrationPeriod[electionId_] &lt; block.timestamp &amp;&amp; // check if reg is closed
+                votingPeriod[electionId_] &gt; block.timestamp, // checl if voting is open
+            "Voting period is not open"
+        );
+        // check if the candidate is registered
+        require(candidateStatus[electionId_][candidate_], "Candidate is not registered");
+        // check if voted already
+        require(!voter[electionId_][address(msg.sender)], "Already voted");
+&nbsp;
+        // vote
+        candidateVotes[electionId_][candidate_]++;
+        voter[electionId_][address(msg.sender)] = true;
+&nbsp;
+        emit Voted(address(msg.sender), electionId_, candidate_);
+    }
+&nbsp;
+    // public view functions
+    function getElectionStatus(uint256 electionId_) public view returns (bool) {
+        return (electionEndTime[electionId_] &gt; block.timestamp);
+    }
+&nbsp;
+    function getRegistrationEndTime(uint256 electionId_) public view returns (uint256) {
+        return (registrationPeriod[electionId_]);
+    }
+&nbsp;
+    function getVotingEndTime(uint256 electionId_) public view returns (uint256) {
+        return (votingPeriod[electionId_]);
+    }
+&nbsp;
+    function getElectionEndTime(uint256 electionId_) public view returns (uint256) {
+        return (electionEndTime[electionId_]);
+    }
+&nbsp;
+    function getElectionInitiator(uint256 electionId_) public view returns (address) {
+        return (electionInitiator[electionId_]);
+    }
+&nbsp;
+    function getCandidateVotes(uint256 electionId_, address candidate_) public view returns (uint256) {
+        return candidateVotes[electionId_][candidate_];
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 12 2023 16:25:04 GMT+0200 (Central European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
